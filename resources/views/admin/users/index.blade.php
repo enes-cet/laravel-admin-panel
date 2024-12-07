@@ -19,6 +19,7 @@
                             <th>Ad</th>
                             <th>Email</th>
                             <th>Oluşturulma Tarihi</th>
+                            <th>Roller</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -26,6 +27,7 @@
                             <th>Ad</th>
                             <th>Email</th>
                             <th>Oluşturulma Tarihi</th>
+                            <th>Roller</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -34,6 +36,11 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->created_at}}</td>
+                            <td>
+                                @foreach ($user->roles as $role )
+                                    {{$role->title}}
+                                @endforeach
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
